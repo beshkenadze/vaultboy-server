@@ -1,0 +1,15 @@
+{
+  "author": "Aleksandr Beshkenadze <beshkenadze@gmail.com>",
+  "name": "vaultboy-sever",
+  "version": "0.0.1",
+  "description": "Securely share sensitive information in chats.",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.6",
+    "mongoose": "^4.4.4",
+    "password-generator": "^2.0.2",
+    "restify": "^4.0.4"
+  }
+}
