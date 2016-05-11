@@ -12,7 +12,8 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
 server.get('/vault/generate_password', function (req, res, next) {
-	res.send(201, generatePassword());
+  var length = req.query.length || 10;
+	res.send(201, generatePassword(length, false));
 	return next();
 });
 
@@ -20,7 +21,7 @@ server.post('/vault/encrypt', function (req, res, next) {
 	var content = req.params.content;
 	var key = req.params.key;
 	var result = CryptoJS.AES.encrypt(content, key);
-	
+
 	res.send(201, result.toString());
 	return next();
 });
